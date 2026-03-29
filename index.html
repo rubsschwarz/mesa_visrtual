@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mesa Virtual IA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    header {
+      background: #1e293b;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      height: 100vh;
+    }
+
+    .sidebar {
+      background: #1e293b;
+      padding: 15px;
+    }
+
+    .sidebar h3 {
+      margin-top: 0;
+    }
+
+    .sidebar button {
+      width: 100%;
+      margin: 5px 0;
+      padding: 10px;
+      background: #334155;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .sidebar button:hover {
+      background: #475569;
+    }
+
+    .main {
+      padding: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      background: #020617;
+      color: white;
+      border: 1px solid #334155;
+      padding: 10px;
+    }
+
+    .output {
+      margin-top: 20px;
+      padding: 15px;
+      background: #020617;
+      border: 1px solid #334155;
+      min-height: 150px;
+    }
+
+    .btn-generate {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #22c55e;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-generate:hover {
+      background: #16a34a;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  🚀 Mesa Virtual IA
+</header>
+
+<div class="container">
+  
+  <div class="sidebar">
+    <h3>Projetos</h3>
+    <button onclick="loadExample()">Exoesqueleto</button>
+    <button>Nova Ideia</button>
+  </div>
+
+  <div class="main">
+    <h2>Digite sua ideia</h2>
+
+    <textarea id="inputText" placeholder="Ex: Criar um exoesqueleto com HUD..."></textarea>
+
+    <button class="btn-generate" onclick="generate()">Gerar</button>
+
+    <div class="output" id="output">
+      Resultado aparecerá aqui...
+    </div>
+  </div>
+
+</div>
+
+<script>
+function generate() {
+  const input = document.getElementById("inputText").value;
+
+  if (!input) {
+    alert("Digite algo primeiro!");
+    return;
+  }
+
+  // Simulação de IA (depois conectamos de verdade)
+  document.getElementById("output").innerHTML =
+    "🧠 IA gerou:\n\n" +
+    "• Estrutura inicial criada\n" +
+    "• Ideia: " + input + "\n" +
+    "• Próximo passo: modelagem 3D no Blender\n" +
+    "• Simulação sugerida no Unity";
+}
+
+function loadExample() {
+  document.getElementById("inputText").value =
+    "Exoesqueleto com propulsão, HUD e força ampliada";
+}
+</script>
+
+</body>
+</html>
